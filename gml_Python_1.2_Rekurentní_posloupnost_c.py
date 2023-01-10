@@ -1,9 +1,13 @@
-def recursive_sequence(a1, a2, n):
-    # Initial values
-    a_n = [a2, a1]
-    # Recursive calculation
-    for i in range(2, n):
-        a_n.append(a_n[i-1] - a1 + a_n[i-2])
-    return a_n
+def recursive_sequence(n):
+    if n == 1:
+        return [1]
+    elif n == 2:
+        return [1, 1]
+    else:
+        seq = recursive_sequence(n-1)
+        next_num = seq[-1] - seq[-2]
+        seq.append(next_num)
+        return seq
 
-print(recursive_sequence(0, 1, 5))
+sequence = recursive_sequence(5)
+print(sequence)
