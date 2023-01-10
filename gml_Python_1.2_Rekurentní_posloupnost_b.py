@@ -2,10 +2,11 @@ def rekurentni_posloupnost(n):
     if n == 0:
         return []
     elif n == 1:
-        return [2]
+        return [1]
     else:
         L = rekurentni_posloupnost(n-1)
-        L.append(3*L[-1])
+        L.append(1/(1+L[-1]))
         return L
 
-rekurentni_posloupnost(5)
+        
+print(rekurentni_posloupnost(5))
